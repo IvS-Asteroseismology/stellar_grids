@@ -14,7 +14,7 @@ def make_mesa_setup(setup_directory=f'{os.getcwd()}/MESA_setup', work_dir=f'{os.
                     output_dir= os.path.expandvars(f'{os.getcwd()}/MESA_out')):
     """
     Construct a setup and job list to run a MESA grid on the VSC.
-    Check the submission script 'submit_MESA.pbs' that is copied by this function
+    Check the submission script 'VSC_submit_MESA.pbs' that is copied by this function
     for instructions on how to run the grid on the VSC using the worker frame.
     ------- Parameters -------
     setup_directory, output_dir, work_dir: string

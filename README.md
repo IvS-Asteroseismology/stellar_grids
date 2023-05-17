@@ -13,15 +13,16 @@ If you do not wish to use poetry, you could install by running `pip install .`. 
 
 <details>
 <summary> <b>Usage</b> (click to expand) </summary> <br>
-In a python script, run the following line to make a grid with 2 different initial masses (M_ini,numbers are in solar mass), and 3 different metallicities (Z_ini, numbers are mass fraction).
+
+To make a MESA grid, check the docstring of the `make_mesa_setup` function in file `grid_building_vsc` for all the available and required parameters. The current setup is tuned to have 6 varied parameters `'Zini', 'Mini', 'logD', 'aov', 'fov'` that are put in a csv file (together with the MESA work directory and the output folder). These are read by the job scheduler and passed to the MESA run_star_extras. The run_star_extras should then read these in as command line arguments, and set the appropriate variables in the run_star_extras instead of the inlist. These scripts can of course be modified to suit your specific needs. <br>
+To make a GYRE grid based on the MESA grid computed before, check `make_gyre_setup` in file `grid_building_vsc` for all the available and required parameters.
+
+As an example: run the following lines in a python script to make a grid with 2 different initial masses (M_ini, numbers are in solar mass), and 3 different metallicities (Z_ini, numbers are mass fraction).
 <pre>
 from stellar grids import grid_building_vsc as gbv
 
 gbv.make_mesa_setup(M_ini_list=[1,2], Z_ini_list=[0.010, 0.014, 0.018])
 </pre>
-
-To make a MESA grid, check the docstring of the `make_mesa_setup` function in file `grid_building_vsc` for all the available and required parameters. The current setup is tuned to have 6 varied parameters `'Zini', 'Mini', 'logD', 'aov', 'fov'` that are put in a csv file (together with the MESA work directory and the output folder). These are read by the job scheduler and passed to the MESA run_star_extras. The run_star_extras should then read these in as command line arguments, and set the appropriate variables in the run_star_extras instead of the inlist. These scripts can of course be modified to suit your specific needs. <br>
-To make a GYRE grid based on the MESA grid computed before, check `make_gyre_setup` in file `grid_building_vsc` for all the available and required parameters.
 
 </details>
 

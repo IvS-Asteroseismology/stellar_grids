@@ -1,4 +1,4 @@
-"""Functions for building MESA and GYRE grids on the SLURM framework."""
+"""Functions for building MESA and GYRE grids on the SLURM framework of the local IvS cluster (pleiades)."""
 import numpy as np
 import glob, os, sys
 from pathlib import Path

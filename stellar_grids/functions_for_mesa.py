@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import h5py
-from foam import support_functions as sf
+from stellar_grids import support_functions as sf
 
 ################################################################################
 def read_mesa_file(file_path, index_col=None):
