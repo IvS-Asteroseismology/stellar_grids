@@ -1,5 +1,4 @@
 """A few helpful functions to process MESA output."""
-# from foam import functions_for_mesa as ffm
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

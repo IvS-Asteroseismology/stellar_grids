@@ -1,9 +1,9 @@
 """Helpful functions in general. Making figures, reading HDF5, processing strings."""
-# from foam import support_functions as sf
 import h5py, re
 import pandas as pd
 from pathlib import Path
 import logging
+from io import StringIO
 from stellar_grids import functions_for_mesa as ffm
 
 logger = logging.getLogger('logger.sf')
