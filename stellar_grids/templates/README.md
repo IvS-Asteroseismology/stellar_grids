@@ -1,5 +1,6 @@
 # Templates
 A number of template files; GYRE inlists, bash scripts, VSC submit files.
+Check the [VSC documentation](https://docs.vscentrum.be/en/latest/index.html) for more info on the submission scripts.
 
 ## Contents
 1. `gyre_template.in`: template for a GYRE inlist.
