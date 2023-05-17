@@ -14,7 +14,7 @@ def make_mesa_setup(setup_directory=f'{os.getcwd()}/MESA_setup', work_dir=f'{os.
                     output_dir= os.path.expandvars(f'{os.getcwd()}/MESA_out')):
     """
     Construct a setup and job list to run a MESA grid on the VSC.
-    Check the submission script 'VSC_submit_MESA.pbs' that is copied by this function
+    Check the submission script 'VSC_submit_MESA.slurm' that is copied by this function
     for instructions on how to run the grid on the VSC using the worker frame.
     ------- Parameters -------
     setup_directory, output_dir, work_dir: string
@@ -51,7 +51,7 @@ def make_mesa_setup(setup_directory=f'{os.getcwd()}/MESA_setup', work_dir=f'{os.
                             writer.writerow(line_to_write)
 
     copyfile(os.path.expandvars(f'{Path(__file__).parent}/templates/run_MESA.sh'), f'{setup_directory}/run_MESA.sh')
-    copyfile(os.path.expandvars(f'{Path(__file__).parent}/templates/VSC_submit_MESA.pbs'), f'{setup_directory}/submit_MESA.pbs')
+    copyfile(os.path.expandvars(f'{Path(__file__).parent}/templates/VSC_submit_MESA.slurm'), f'{setup_directory}/submit_MESA.slurm')
     return
 
 ################################################################################
@@ -110,7 +110,7 @@ def make_gyre_setup(setup_directory=f'{os.getcwd()}/GYRE_setup', npg_min=-50, np
                 writer.writerow(result)
         p.close()
     copyfile(os.path.expandvars(f'{Path(__file__).parent}/templates/run_GYRE.sh'), f'{setup_directory}/run_GYRE.sh')
-    copyfile(os.path.expandvars(f'{Path(__file__).parent}/templates/VSC_submit_GYRE.pbs'), f'{setup_directory}/submit_GYRE.pbs')
+    copyfile(os.path.expandvars(f'{Path(__file__).parent}/templates/VSC_submit_GYRE.slurm'), f'{setup_directory}/submit_GYRE.slurm')
     return
 
 ################################################################################
