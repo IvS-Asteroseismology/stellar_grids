@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "stellar_grids"
+version = "0.0.1"
+description = "Building MESA/GYRE grids"
+authors = ["MichielsenM <mathias.michielsen@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9,<3.11"
+numpy = "^1.21.2"
+h5py = "^3.4.0"
+matplotlib = "^3.4.3"
+pandas = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
