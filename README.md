@@ -19,7 +19,7 @@ To make a GYRE grid based on the MESA grid computed before, check `make_gyre_set
 
 As an example: run the following lines in a python script to make a grid with 2 different initial masses (M_ini, numbers are in solar mass), and 3 different metallicities (Z_ini, numbers are mass fraction).
 <pre>
-from stellar grids import grid_building_vsc as gbv
+from stellar_grids import grid_building_vsc as gbv
 
 gbv.make_mesa_setup(M_ini_list=[1,2], Z_ini_list=[0.010, 0.014, 0.018])
 </pre>
