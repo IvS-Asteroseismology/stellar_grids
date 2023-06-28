@@ -9,7 +9,6 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=CPU
 #SBATCH --mem=MEMORY
-#SBATCH --exclude=pleiad14,pleiad15
 
 list=LIST
 
