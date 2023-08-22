@@ -1,5 +1,4 @@
 """Functions for building MESA and GYRE grids on the VSC (Vlaams Supercomputer Centrum) framework."""
-import numpy as np
 import glob, os, sys, csv
 import logging, pkgutil, multiprocessing
 from shutil import copyfile

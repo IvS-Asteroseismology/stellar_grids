@@ -1,6 +1,7 @@
 """Helpful functions in general. Making figures, reading HDF5, processing strings."""
-import h5py, re
+import h5py, re, pkgutil, sys, glob
 import pandas as pd
+import numpy as np
 from pathlib import Path
 import logging
 from io import StringIO
@@ -178,9 +179,9 @@ def calc_scanning_range(gyre_file_path, npg_min=-50, npg_max=-1, l=1, m=1, omega
         lower and upper bound of frequency range that needs to be scanned in oder
         to retrieve the required range of radial orders
     """
-    directory, gyre_file = sf.split_line(gyre_file_path, 'gyre/') # get directory name and GYRE filename
-    Xc_file = float(sf.substring(gyre_file, 'Xc', '.GYRE'))       # get Xc
-    MESA_hist_name, tail = sf.split_line(gyre_file, '_Xc')        # Get the MESA history name form the GYRE filename
+    directory, gyre_file = split_line(gyre_file_path, 'gyre/') # get directory name and GYRE filename
+    Xc_file = float(substring(gyre_file, 'Xc', '.GYRE'))       # get Xc
+    MESA_hist_name, tail = split_line(gyre_file, '_Xc')        # Get the MESA history name form the GYRE filename
     hist_file = glob.glob(f'{directory}history/{MESA_hist_name}.*hist')[0]   # selects MESA history file (.hist or .h5_hist) corresponding to the GYRE file
 
     header, data  = ffm.read_mesa_file(hist_file)
