@@ -1,0 +1,27 @@
+These scripts are made to rerun the failed GYRE models
+adjust 'make_list_to_rerun_GYRE.sh' for different directory paths!
+
+1) prep_remove_errfiles.sh 
+Is the first script to run, in the job_errs folder. It makes another bash script ("list_remove.sh") to remove all error files containing "WARNING: Discarding imaginary part of atmospheric radial wavenumber".
+The error files left after running this constructed bash script this will most likely be failed runs.
+
+Best to rename the job_errs folder, so that errs of the rerun files are in a different folder.
+
+2) make_list_to_rerun_GYRE.sh
+Looks at all the remaining error files, and makes a list of the corresponding GYRE inlist files that need to be run again. ("inlist_to_rerun.csv")
+
+3) construct_new_list_GYREparam.py
+Make a new file of GYRE parameters for all the inlist in 'inlist_to_rerun.csv'. Submit this as a new job.
+(based on the original file 'GYRE_parameters.csv', keeps lines with an inlist that corresponds to those in 'inlist_to_rerun.csv')
+
+Repeat steps 1-3 untill either all models ran succesfully, or only a few (~10) are left.
+
+4)run_gyre_on_login.sh 
+run the last few models on the login node. Reads in the parameter list 'redo_GYRE_parameters.csv' and runs the GYRE scipt for those parameters on the login node.
+Manually remove the header line from the parameter csv file before running the script.
+
+Extra)
+make_csv_on_logs.sh
+Alternative way to construct the new list of GYRE parameters based on missing log files from the gyre_logs directory
+Place it in the setup folder next to the GYRE_parameters.csv file and run it.
+
