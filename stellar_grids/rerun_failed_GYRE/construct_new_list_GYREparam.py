@@ -1,5 +1,5 @@
 import pandas as pd
-from foam import support_functions as sf
+from stellar_grids import support_functions as sf
 
 list_to = pd.read_table('inlist_to_rerun.csv', header=None)
 
