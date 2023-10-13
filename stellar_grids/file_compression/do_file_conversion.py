@@ -2,7 +2,7 @@ from glob import glob
 import os
 from sys import argv
 import multiprocessing
-import hdf5_io_support as h5_io
+from stellar_grids import hdf5_io_support as h5_io
 
 def processGYRE(original_gyre_file):
     name_to_save_to = original_gyre_file.split('.GYRE')[0]+'.h5_GYRE'
