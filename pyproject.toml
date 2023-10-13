@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stellar_grids"
-version = "0.0.1"
+version = "0.1.0"
 description = "Building MESA/GYRE grids"
 authors = ["MichielsenM <mathias.michielsen@hotmail.com>"]
 
