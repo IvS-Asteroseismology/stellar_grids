@@ -7,4 +7,4 @@
 5. `lambda.csv`: List with lambda (eigenvalue of laplace tidal equations) and nu (spin parameter) for modes up to degree 3. (TAR approximation)
 6. `support_functions.py` : Support functions used by the other modules in the package.
 7. `rerun_failed_GYRE`: Scripts to identify and re-run GYRE models that failed to run on the VSC. (E.g. due to "file not found" errors from HDF5 library because of high I/O on the VSC system.)
-
+8. `file_compression`: convert MESA files to HDF5 format and compress into tarballs for quicker file transfer
